@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryforovi"
+		},
+		"AzureSynapseAnalyticsLINK_connectionString": {
+			"value": ""
+		},
+		"appvm_intergratedruntimeSERVICE_password": {
+			"value": ""
+		},
+		"datalakeLINK_accountKey": {
+			"value": ""
+		},
+		"linkedServiceSTAGING_connectionString": {
+			"value": ""
+		},
+		"appvm_intergratedruntimeSERVICE_properties_typeProperties_host": {
+			"value": "D:\\nginx-1.24.0\\logs"
+		},
+		"appvm_intergratedruntimeSERVICE_properties_typeProperties_userId": {
+			"value": "appusr"
+		},
+		"datalakeLINK_properties_typeProperties_url": {
+			"value": "https://datalakeovi.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
