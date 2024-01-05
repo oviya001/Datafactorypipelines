@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "datafactoryforovi"
 		},
+		"AzureSqlDatabaseLINK_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLINK'"
+		},
 		"AzureSynapseAnalyticsLINK_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalyticsLINK'"
@@ -61,6 +65,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabaseLINK_connectionString": {
+						"value": "[parameters('AzureSqlDatabaseLINK_connectionString')]"
 					},
 					"AzureSynapseAnalyticsLINK_connectionString": {
 						"value": "[parameters('AzureSynapseAnalyticsLINK_connectionString')]"

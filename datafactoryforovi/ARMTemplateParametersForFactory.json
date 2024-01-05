@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "datafactoryforovi"
 		},
+		"AzureSqlDatabaseLINK_connectionString": {
+			"value": ""
+		},
 		"AzureSynapseAnalyticsLINK_connectionString": {
 			"value": ""
 		},
