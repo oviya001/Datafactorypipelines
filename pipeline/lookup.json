@@ -18,6 +18,12 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderStoredProcedureName": "[dbo].[GetCustDetails]",
+						"storedProcedureParameters": {
+							"customerID": {
+								"type": "Int32",
+								"value": "277"
+							}
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
