@@ -1,0 +1,6 @@
+{
+	"name": "appvmIntegration",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

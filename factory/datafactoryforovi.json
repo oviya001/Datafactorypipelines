@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryforovi",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "156e7900-86d5-440b-aae3-2bda45445c82",
+		"tenantId": "a8eec281-aaa3-4dae-ac9b-9a398b9215e7"
+	}
+}
