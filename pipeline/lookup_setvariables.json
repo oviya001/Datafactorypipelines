@@ -1,0 +1,95 @@
+{
+	"name": "lookup_setvariables",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookupsetvariable",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[dbo].[GetCustDetails]",
+						"storedProcedureParameters": {
+							"customerID": {
+								"type": "Int32",
+								"value": "277"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set variable company name",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookupsetvariable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "CustomerName",
+					"value": {
+						"value": "@activity('Lookupsetvariable').output.firstRow.CompanyName",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable SalesPerson",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookupsetvariable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "SalesPerson",
+					"value": {
+						"value": "@activity('Lookupsetvariable').output.firstRow.SalesPerson",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"CustomerName": {
+				"type": "String"
+			},
+			"SalesPerson": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
